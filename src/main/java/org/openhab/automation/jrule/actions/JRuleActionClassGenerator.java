@@ -197,7 +197,7 @@ public class JRuleActionClassGenerator extends JRuleAbstractClassGenerator {
                                 arg.put("type", parameterType.getTypeName());
                                 arg.put("reflectionType", ClassUtils.primitiveToWrapper(parameter.getType())
                                         .getTypeName().replaceFirst("java.lang.", ""));
-                                arg.put("name", parameter.getAnnotation(ActionInput.class).name());
+                                arg.put("name", parameter.getAnnotation(ActionInput.class).name().replaceAll("\s", ""));
                                 args.add(arg);
                             }
                         });
